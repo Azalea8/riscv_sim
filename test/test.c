@@ -1,12 +1,17 @@
-void fun(int *x);
+int fun(int x);
 
-int main() {
-    int x = 1;
-    fun(&x);
+int main(int argc, char **argv) {
+    int x = (int)argv[0];
+    int ans = fun(x);
     return 0;
 }
 
-void fun(int *x) {
-    *x += 10;
-    return;
+int fun(int x) {
+    if(x == 0) {
+        return 1;
+    }
+    if(x == 1) {
+        return 1;
+    }
+    return fun(x - 1) + fun(x - 2);
 }

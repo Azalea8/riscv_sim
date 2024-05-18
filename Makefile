@@ -11,7 +11,7 @@ test-code:
 	riscv64-unknown-elf-objdump -D -b binary -m riscv:rv32 test/test.bin > testcode.txt
 
 run:
-	./mini-rv32i test/test.bin > output.txt
+	./mini-rv32i test/test.bin 10 > output.txt
 
 clean:
 	rm -f mini-rv32i output.txt testcode.txt test/test.bin test/test.elf
